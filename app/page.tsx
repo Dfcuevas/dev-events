@@ -14,7 +14,6 @@ export default function Page() {
         Hackathons, Meetups, and Conferences, All in One Place
       </p>
       <ExploreBtn />
-
       <div className="mt-20 space-y-7">
         <h3>Featured Events</h3>
 
