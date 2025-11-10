@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 // Define the structure of our cached connection
 interface MongooseCache {
@@ -15,12 +15,12 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
   throw new Error(
-    'Please define the MONGODB_URI environment variable inside .env.local'
+    `Please define the MONGODB_URI environment variable inside .env.local `,
   );
 }
 
 // Initialize cache object to store the connection
-let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
+const cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
 if (!global.mongoose) {
   global.mongoose = cached;
@@ -42,9 +42,11 @@ async function connectDB(): Promise<typeof mongoose> {
       bufferCommands: false, // Disable mongoose buffering
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI!, options).then((mongoose) => {
-      return mongoose;
-    });
+    cached.promise = mongoose
+      .connect(MONGODB_URI!, options)
+      .then((mongoose) => {
+        return mongoose;
+      });
   }
 
   try {
