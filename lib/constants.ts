@@ -2,13 +2,13 @@
 // Images reference files under public/images so they can be used directly with next/image
 
 export type EventItem = {
-  title: string
-  image: string // path starting with "/images/..."
-  slug: string
-  location: string
-  date: string // ISO-like or human-readable date string
-  time: string // e.g., "09:00 AM – 5:00 PM"
-}
+  title: string;
+  image: string; // path starting with "/images/..."
+  slug: string;
+  location: string;
+  date: string; // ISO-like or human-readable date string
+  time: string; // e.g., "09:00 AM – 5:00 PM"
+};
 
 export const events: EventItem[] = [
   {
@@ -75,4 +75,4 @@ export const events: EventItem[] = [
     date: "May 15–23, 2026",
     time: "Talks & Tutorials",
   },
-]
+];
